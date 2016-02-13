@@ -1,0 +1,42 @@
+$background-image-template: url("../img/LANDING-PAGE.jpg")
+$background-image: url("../img/landing-page-cutout.jpg")
+
+html
+	height: 100%
+
+body
+	// height: 100%
+	background-size: cover
+	background-position: right
+	background-image: $background-image
+
+*
+	// outline: red 1px solid
+
+header
+	width: 800px
+	position: absolute
+	top: 120px;
+	right: 100px
+	font: normal normal 700 10px 'Economica',sans-serif
+	text-align: center
+	h1
+		font-size: 110px;
+		letter-spacing: -3px
+	h2
+		font-size: 40px
+		letter-spacing: -2px
+
+	.title
+		margin-bottom: 15px
+
+	.bar
+		width: 80%
+		height: 1px
+		margin: 0 auto 40px auto;
+		background-color: #000;
+
+	.featuring, .directed
+		display: inline-block
+	.featuring+.directed
+		margin-left: 30px
