@@ -10,7 +10,7 @@ html {
 body {
   background-size: cover;
   background-position: right 60%;
-  background-image: url("../img/landing-page-cutout.jpg");
+  background-image: url("../img/landing-page-background.jpg");
   font-size: 10px; }
 
 header {
@@ -19,26 +19,27 @@ header {
   position: absolute;
   top: 120px;
   top: 12em;
-  right: 100px;
+  right: 80px;
   font: normal normal 400 1em 'White Elephant','Economica',sans-serif;
   text-align: center; }
   header h1 {
-    font-size: 11em; }
+    font-size: 12em;
+    line-height: 1em; }
   header h2 {
-    font-size: 4em; }
+    font-size: 4.5em; }
   header .title {
-    margin-bottom: 0.137em; }
+    margin-bottom: 0em; }
   header .bar {
     width: 80%;
-    height: 1px;
+    height: 2px;
     margin: 0 auto 4em auto;
-    background-color: #000; }
+    background-color: #333; }
   header .featuring, header .directed {
     display: inline-block; }
   header .featuring + .directed {
-    margin-left: 0.8em; }
+    margin-left: 1.5em; }
 
-@media (max-height: 850px) {
+@media (max-height: 890px) {
   body {
     font-size: 8px; } }
 
@@ -46,7 +47,7 @@ header {
   body {
     font-size: 8px; } }
 
-@media (max-height: 700px) {
+@media (max-height: 775px) {
   body {
     font-size: 6px; } }
 
@@ -54,6 +55,19 @@ header {
   body {
     font-size: 7px; } }
 
-@media (max-height: 570px) {
+@media (max-width: 750px) {
+  header {
+    position: inherit;
+    margin: 12em auto 0 auto; } }
+
+@media (max-height: 665px) {
+  body {
+    font-size: 4px; } }
+
+@media (max-width: 550px) {
+  body {
+    font-size: 6px; } }
+
+@media (max-width: 475px) {
   body {
     font-size: 4px; } }
