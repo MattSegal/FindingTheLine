@@ -24,3 +24,10 @@ html(lang="en")
 			.bar
 			h2.featuring FEATURING ANNA + NAT SEGAL
 			h2.directed DIRECTED BY BJARNE SALEN
+
+	script.
+		// this hopefully gets rid of jade being weird
+		var header = document.getElementsByTagName('header')[0]
+		setTimeout(function() {
+			header.style.opacity = 1
+		},400)
