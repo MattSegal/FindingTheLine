@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'White Elephant';
+  src: url("../fonts/white-elephant.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
 html {
   height: 100%; }
 
@@ -13,7 +19,7 @@ header {
   top: 120px;
   top: 12em;
   right: 100px;
-  font: normal normal 700 1em 'Economica',sans-serif;
+  font: normal normal 400 1em 'White Elephant','Economica',sans-serif;
   text-align: center; }
   header h1 {
     font-size: 11em; }
@@ -50,10 +56,3 @@ header {
 @media (max-height: 570px) {
   body {
     font-size: 4px; } }
-
-@media (max-width: 800px) {
-  body {
-    background-position: left; }
-  header {
-    position: relative;
-    left: 320px; } }
