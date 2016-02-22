@@ -7,5 +7,10 @@ app = Flask(__name__)
 def homepage():
     return render_template('./landing.html')
 
+@app.route('/contact/')
+def contact():
+    return render_template('./contact.html')
+
+
 if __name__ == "__main__":
     app.run(host= '0.0.0.0',debug=True)

@@ -1,0 +1,49 @@
+@font-face
+	font-family: 'White Elephant'
+	src: url('../fonts/white-elephant.ttf') format('truetype')
+	font-weight: normal
+	font-style: normal
+
+
+$background-image: url("../img/contact-page-background.jpg")
+$page-font: normal normal 400 1em 'White Elephant','Economica',sans-serif
+
+html
+	height: 100%
+	// overflow-x: hidden
+
+body
+	background-size: cover
+	background-position: right 60%
+	background-image: $background-image
+	font-size: 10px
+
+*
+	// outline: red 1px solid
+
+
+
+@media(max-height: 890px), (max-width: 1200px)
+	body
+		font-size: 8px
+
+@media(max-width: 1000px)
+	body
+		font-size: 7px
+
+@media(max-height: 775px), (max-width: 800px)
+	body
+		font-size: 6px
+
+@media(max-width: 750px)
+	header
+		position: inherit
+		margin: 12em auto 0 auto
+
+@media(max-width: 550px)
+	body
+		font-size: 6px
+
+@media(max-height: 665px), (max-width: 475px)
+	body
+		font-size: 4px

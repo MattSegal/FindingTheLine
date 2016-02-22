@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'White Elephant';
-  src: url("../fonts/white-elephant.ttf") format("truetype");
+  src: url("../fonts/white-elephant.eot");
+  src: url("../fonts/white-elephant.eot?#iefix") format("embedded-opentype"), url("../fonts/white-elephant.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
@@ -13,6 +14,25 @@ body {
   background-image: url("../img/landing-page-background.jpg");
   font-size: 10px; }
 
+.more-info {
+  position: absolute;
+  bottom: 5%;
+  right: 130px; }
+  .more-info img {
+    vertical-align: bottom;
+    height: 40px; }
+  .more-info a {
+    font: normal normal 400 1em "White Elephant", "Economica", sans-serif;
+    font-size: 35px;
+    text-decoration: none;
+    color: #000; }
+    .more-info a:hover {
+      text-decoration: underline; }
+
+#more-info.top-left {
+  top: 20px;
+  left: 30px; }
+
 header {
   opacity: 0;
   width: 80em;
@@ -20,7 +40,7 @@ header {
   top: 120px;
   top: 12em;
   right: 80px;
-  font: normal normal 400 1em 'White Elephant','Economica',sans-serif;
+  font: normal normal 400 1em "White Elephant", "Economica", sans-serif;
   text-align: center; }
   header h1 {
     font-size: 12em;
@@ -63,3 +83,17 @@ header {
 @media (max-height: 665px), (max-width: 475px) {
   body {
     font-size: 4px; } }
+
+@media (max-width: 500px) {
+  .more-info {
+    right: 50px; } }
+
+@media (max-height: 700px) {
+  .more-info {
+    right: 50px;
+    bottom: 1%; } }
+
+@media (min-width: 500px) and (max-height: 700px) {
+  .more-info {
+    right: 30px;
+    bottom: 1%; } }

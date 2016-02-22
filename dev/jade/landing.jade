@@ -23,10 +23,45 @@ html(lang="en")
 			.bar
 			h2.featuring FEATURING ANNA + NAT SEGAL
 			h2.directed DIRECTED BY BJARNE SALEN
+		
+		.more-info(id="more-info")
+			a(href="{{url_for('contact')}}") 
+				|MORE INFO
+				img(src="{{url_for('static',filename='img/more-info-arrow.gif')}}")
+		.test-box
 
 	script.
-		// this hopefully gets rid of jade being weird
+		// this comment hopefully gets rid of jade being weird
 		var header = document.getElementsByTagName('header')[0]
+		var body = document.getElementsByTagName('body')[0]
+		var contactLink = document.getElementsByClassName('more-info')[0] 
+		var styles, height, width, aspectRatio, vertCrop, botCrop, trueHeight, boxHeight, skiHeight, topCollision
+		var trueAspectRatio = 1.5
+
+		responsiveLayout()
+		window.onresize = responsiveLayout
+
 		setTimeout(function() {
 			header.style.opacity = 1
-		},400)
+		},400)		
+		
+
+		function responsiveLayout() {
+			styles = window.getComputedStyle(body)
+			width = window.innerWidth
+			height = window.innerHeight
+			aspectRatio = width/height
+			vertCrop = aspectRatio > trueAspectRatio
+			horzCrop = aspectRatio < trueAspectRatio
+			
+			trueHeight = vertCrop ? width / trueAspectRatio : height
+			botCrop = vertCrop ? (trueHeight - height) * 0.4 : 0
+			skiHeight = trueHeight * 0.15 - botCrop
+			if (skiHeight < 50) {
+				contactLink.className = "more-info top-left"
+				body.style.backgroundPosition = "right 20%"
+			} else {
+				contactLink.className = "more-info"
+				body.style.backgroundPosition = "right 60%"
+			}
+		}

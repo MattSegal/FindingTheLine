@@ -1,1 +1,1 @@
-I am the readme. test, test, 1, 2, test
+add support for sideways phone
