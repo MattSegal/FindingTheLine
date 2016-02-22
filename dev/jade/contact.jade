@@ -36,4 +36,6 @@ html(lang="en")
 
 		.mailing-list
 			.prompt ENTER YOUR EMAIL TO STAY UPDATED:
-			input
+			input(id="email-input", placeholder="skiier@example.com")
+
+		script(src="{{url_for('static',filename='js/email.js')}}")
