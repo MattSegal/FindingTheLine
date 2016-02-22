@@ -6,5 +6,5 @@ venv
 node_modules
 gulpfile.js
 open_here.ps1
-*.jpg
+#*.jpg
 package.json
