@@ -84,6 +84,10 @@ header {
   body {
     font-size: 6px; } }
 
+@media (max-height: 730px) and (min-width: 1500px) {
+  body {
+    font-size: 5px; } }
+
 @media (max-height: 665px), (max-width: 475px) {
   body {
     font-size: 4px; } }
