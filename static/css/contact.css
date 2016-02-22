@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'White Elephant';
-  src: url("../fonts/white-elephant.ttf") format("truetype");
+  src: url("../fonts/white-elephant.eot");
+  src: url("../fonts/white-elephant.eot?#iefix") format("embedded-opentype"), url("../fonts/white-elephant.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
@@ -13,27 +14,74 @@ body {
   background-image: url("../img/contact-page-background.jpg");
   font-size: 10px; }
 
-@media (max-height: 890px), (max-width: 1200px) {
+.title {
+  font: normal normal 400 1em "White Elephant", "Economica", sans-serif;
+  font-size: 5.5em;
+  text-align: center;
+  margin: 1em 0 1em 0; }
+
+.stars, .director, .support, .mailing-list {
+  font: normal normal 300 1em "Roboto", sans-serif;
+  font-size: 2.7em;
+  text-align: center;
+  margin: 0 0 1.5em 0; }
+
+.support {
+  font-style: italic;
+  margin: 0 0 3em 0;
+  letter-spacing: -0.05em; }
+
+.support-email {
+  display: inline-block;
+  font-weight: 700; }
+
+.mailing-list {
+  font-size: 1em; }
+  .mailing-list .prompt {
+    display: inline-block;
+    margin-right: 10px;
+    font: normal normal 400 1em "White Elephant", "Economica", sans-serif;
+    font-size: 4em; }
+  .mailing-list input {
+    display: inline-block;
+    vertical-align: top;
+    height: 2em;
+    padding: 0.1em 0.7em;
+    width: 20em;
+    font: normal normal 300 1em "Roboto", sans-serif;
+    font-size: 2em; }
+
+a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: -0.05em; }
+  a:hover {
+    text-decoration: underline; }
+
+a + a {
+  margin-left: 2em; }
+
+@media (max-height: 875px), (max-width: 1200px) {
   body {
     font-size: 8px; } }
 
-@media (max-width: 1000px) {
+@media (max-height: 675px), (max-width: 875px) {
   body {
     font-size: 7px; } }
 
-@media (max-height: 775px), (max-width: 800px) {
+@media (max-height: 575px), (max-width: 775px) {
   body {
     font-size: 6px; } }
 
-@media (max-width: 750px) {
-  header {
-    position: inherit;
-    margin: 12em auto 0 auto; } }
-
-@media (max-width: 550px) {
+@media (max-width: 500px) {
   body {
-    font-size: 6px; } }
+    font-size: 5px; } }
 
-@media (max-height: 665px), (max-width: 475px) {
+@media (max-height: 500px) {
   body {
-    font-size: 4px; } }
+    font-size: 4px; }
+  .stars, .director {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top; } }
