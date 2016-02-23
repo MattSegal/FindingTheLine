@@ -10,15 +10,13 @@ function submitEmail() {
 	if (isValidEmail(inputText)) {
 		postEmailRequest(inputText)
 			.done(function(data) {
-					console.log("sucessfully posted email")
-					renderEmailSuccess()
+				renderEmailSuccess()
 			})
-				.fail(function(data) {
-					alert("failed to post email")
-					renderEmailFailure()
+			.fail(function(data) {
+				renderEmailFailure()
 			})	
 
-	} else if (isEmpty(inputText)) {
+	} else if (isEmptyString(inputText)) {
 		alert("Please enter your email before submitting")
 
 	} else {
@@ -30,17 +28,29 @@ function postEmailRequest(email) {
 	return $.ajax({
 	        type: "POST",
 	        url: '/email/',
-	        data: {email: email},
-	        dataType: "json",
+	        data: email,
+	        dataType: "text"
    	 	});
 	}
 
 function renderEmailSuccess() {
-	// log to console, make bar green, change input placeholder text
+	console.log("sucessfully posted email")
+	inputEl.value = ""
+	inputEl.placeholder = "Success!"
+	inputEl.style.borderColor = "#9f9"
+	setTimeout(function() {
+		inputEl.placeholder = "Press Enter to submit."
+		inputEl.style.borderColor = null
+	},5000)
 }
 
 function renderEmailFailure() {
 	// log to console, make bar red, change input placeholder text
+	alert("We failed to save your email (sorry!). Try again later.")
+	inputEl.style.borderColor = "#f99"
+	setTimeout(function() {
+		inputEl.style.borderColor = null
+	},5000)
 }
 
 
@@ -51,7 +61,7 @@ function enterPress(event,fn) {
 	}
 }	
 
-function isEmpty(str) {
+function isEmptyString(str) {
 	// returns True if sting is all whitespace
   	return str.replace(/^\s+|\s+$/g, '').length == 0;
 }
@@ -59,15 +69,4 @@ function isEmpty(str) {
 function isValidEmail(email) {
 	var valid_email_regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	return valid_email_regex.test(email);
-}
-
-
-
-function removeAllWhitespace(str) {
-	// replaces all whitespace with ''
-	// \s is whitespace
-	// + is one or more repetitions
-	// /.../ is regex
-	// g modifier specifies global match - remove ALL whitespace, not first occurrence of whitespace
-	return str.replace(/\s+/g, '')
 }

@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		link(rel="stylesheet", type='text/css', 
+			href="{{url_for('static',filename='css/reset.css')}}")
+		title FTL - Login
+		style.
+			.email-list {
+				padding-top: 30px;
+			}
+			p, h1 {
+				display: block;
+				width: 200px;
+				height: 30px;
+				margin: 0 auto 5px auto;
+				font-size: 20px
+			}
+
+
+	body
+		.email-list
+			{% for email in emails %}
+			p {{email}}
+			{% endfor %}

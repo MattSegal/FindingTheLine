@@ -49,7 +49,8 @@ body {
     padding: 0.1em 0.7em;
     width: 20em;
     font: normal normal 300 1em "Roboto", sans-serif;
-    font-size: 2em; }
+    font-size: 2em;
+    margin-top: -0.2em; }
 
 a {
   color: #000;

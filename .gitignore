@@ -8,3 +8,4 @@ gulpfile.js
 open_here.ps1
 #*.jpg
 package.json
+database.sqlite
