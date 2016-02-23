@@ -39,14 +39,17 @@ def post_email(email, test=False):
 def get_all_emails(test=False):
     db = 'test_db.sqlite' if test else 'database.sqlite'
     con = lite.connect(db)
-    with con:
-        cur = con.cursor()
-        cur.execute("SELECT email FROM emails")
-        emails_raw = cur.fetchall()
-        emails = []
-        for email in emails_raw:
-            emails.append(email[0])
-        return emails
+    try:
+        with con:
+            cur = con.cursor()
+            cur.execute("SELECT email FROM emails")
+            emails_raw = cur.fetchall()
+            emails = []
+            for email in emails_raw:
+                emails.append(email[0])
+            return emails
+    except sqlite3.OperationalError:
+        return [("Database error :(")]
 
 def seed_emails(test=True):
     setup_email(test=test)
