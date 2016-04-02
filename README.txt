@@ -1,3 +1,2 @@
-add database
-add page for getting emails
-add server side validation
+git push live master to deploy
+how does it work? NO ONE KNOWS!!!

@@ -16,7 +16,7 @@ def contact():
 @app.route('/email/',methods=['POST'])
 def post_email():
     email = request.get_data()
-    if email_db.is_valid_email(email) and email_db.post_email(email,test=True):
+    if email_db.is_valid_email(email) and email_db.post_email(email,test=False):
         resp = Response(response='Successfully posted email',status = 200)
     else:
         resp = Response(response='Failed to post email',status = 500)
@@ -30,7 +30,7 @@ def get_email():
 def login():
     password = request.form['password']
     if is_valid_password(password):
-        emails = email_db.get_all_emails(test=True)
+        emails = email_db.get_all_emails(test=False)
         return render_template('./email_list.html',emails=emails)
     else:
         return render_template('./email_login.html')
@@ -40,4 +40,4 @@ def is_valid_password(password):
     return sha1(password).hexdigest() == PASSWORD_HASH
 
 if __name__ == "__main__":
-    app.run(host= '0.0.0.0',debug=True)
+    app.run(host= '0.0.0.0',debug=False)
