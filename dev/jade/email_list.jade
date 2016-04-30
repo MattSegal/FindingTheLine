@@ -1,25 +1,41 @@
 doctype html
 html(lang="en")
-	head
-		meta(charset="utf-8")
-		link(rel="stylesheet", type='text/css', 
-			href="{{url_for('static',filename='css/reset.css')}}")
-		title FTL - Login
-		style.
-			.email-list {
-				padding-top: 30px;
-			}
-			p, h1 {
-				display: block;
-				width: 200px;
-				height: 30px;
-				margin: 0 auto 5px auto;
-				font-size: 20px
-			}
+    head
+        meta(charset="utf-8")
+        link(rel="stylesheet", type='text/css', 
+            href="{{url_for('static',filename='css/reset.css')}}")
+        title FTL - Login
+        style.
+            .email-list {
+                padding-top: 30px;
+            }
+            p, h1 {
+                display: block;
+                width: 200px;
+                height: 30px;
+                margin: 0 auto 5px auto;
+                font-size: 20px;
+            }
+            a {
+                display: block;
+                width: 200px;
+                text-align: center;
+                text-decoration: none;
+                margin: 30px auto 30px auto;
+                font-size: 18px;
+                font-family: sans-serif;
+                line-height: 30px;
+                height: 30px;
+                background-color: #eee;
+                border: 1px solid #333;
+                color: #333;
+                border-radius: 3px;
+            }
 
 
-	body
-		.email-list
-			{% for email in emails %}
-			p {{email}}
-			{% endfor %}
+    body
+        a(href="/download/") Download
+        .email-list
+            {% for email in emails %}
+            p {{email}}
+            {% endfor %}

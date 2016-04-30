@@ -1,9 +1,12 @@
 
-from flask import Flask , render_template, request, Response
-from hashlib import sha1
+from flask import * # fuck tha police
 import email_db
+from helper_functions import *
+from functools import wraps
 
 app = Flask(__name__)
+app.secret_key = 'wu tang clan aint nothin to fuck wit'
+security = Security()
 
 @app.route('/')
 def homepage():
@@ -29,15 +32,34 @@ def get_email():
 @app.route('/login/',methods=['POST'])
 def login():
     password = request.form['password']
-    if is_valid_password(password):
+    if security.is_valid_password(password):
+        security.set_new_session_hash()
+        session['ftl_logged_in'] = security.get_session_hash()
         emails = email_db.get_all_emails(test=False)
         return render_template('./email_list.html',emails=emails)
     else:
         return render_template('./email_login.html')
 
-def is_valid_password(password):
-    PASSWORD_HASH = "1ee7760a3190c95641442f2be0ef7774e139fb1f"
-    return sha1(password).hexdigest() == PASSWORD_HASH
+def login_required(f):
+    @wraps(f)
+    def wrapper (*args,**kwargs): # steal f's args
+        if security.is_logged_in(session):
+            # go on your merry way
+            return f(*args,**kwargs) 
+        else:
+            return redirect(url_for('login'))
+    return wrapper
+
+@app.route('/download/', methods=['GET'])
+@login_required
+def download():
+    emails = email_db.get_all_emails(test=False)
+    txt = ""
+    for email in emails:
+        txt += email+"\n"
+    response = make_response(txt)
+    response.headers["Content-Disposition"] = "attachment; filename=emails.txt"
+    return response
 
 if __name__ == "__main__":
     app.run(host= '0.0.0.0',debug=False)
