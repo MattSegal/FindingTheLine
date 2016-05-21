@@ -24,8 +24,6 @@ var trueTitleHeight = 310 // px
 
 responsiveLayout()
 window.onresize = responsiveLayout
-setTimeout(revealTitle,400)		
-
 
 function responsiveLayout() {
 	styles = window.getComputedStyle(body)
@@ -69,8 +67,4 @@ function responsiveLayout() {
 	fontSize = (titleWidth >= width) ? width / 80.4 : fontSize
 	body.style.fontSize = fontSize + "px"
 	header.style.top = titleOffset
-}
-
-function revealTitle() {
-	header.style.opacity = 1
 }
