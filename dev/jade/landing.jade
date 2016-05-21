@@ -61,11 +61,14 @@ html(lang="en")
                     fadeOut(0)
                 }
             };
-            document.fonts.ready.then(function () {
+
+            function showFonts() {
               var moreInfoBox = document.getElementsByClassName("more-info")[0]
               header.style.opacity = 1
               moreInfoBox.style.opacity = 1
-            });
+            }
+            document.fonts.ready.then(showFonts);
+            setTimeout(showFonts,10000) // just in case something goes really wrong
 
         script(src="{{url_for('static',filename='js/landing.js')}}")
        
