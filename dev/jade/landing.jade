@@ -62,8 +62,9 @@ html(lang="en")
                 }
             };
             document.fonts.ready.then(function () {
-              //- alert('All fonts in use by visible text have loaded.');
+              var moreInfoBox = document.getElementsByClassName("more-info")[0]
               header.style.opacity = 1
+              moreInfoBox.style.opacity = 1
             });
 
         script(src="{{url_for('static',filename='js/landing.js')}}")
