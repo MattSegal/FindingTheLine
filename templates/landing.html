@@ -29,9 +29,16 @@ window.onload = function loadSharpImages() {
 
 function showFonts() {
   var moreInfoBox = document.getElementsByClassName("more-info")[0]
-  header.style.opacity = 1
+  var headerTag = document.getElementsByTagName("header")[0]
+  headerTag.style.opacity = 1
   moreInfoBox.style.opacity = 1
 }
-document.fonts.ready.then(showFonts);
-setTimeout(showFonts,10000) // just in case something goes really wrong
+var isIE9  = navigator.userAgent.indexOf("MSIE 9") != -1        
+var isIE10 = navigator.userAgent.indexOf("MSIE 10") != -1
+var isIE11 = navigator.userAgent.indexOf("rv:11.0") != -1
+if ( isIE9 || isIE10 || isIE11) {
+    setTimeout(showFonts,3000)
+} else {
+    document.fonts.ready.then(showFonts)
+}
 </script><script src="{{url_for('static',filename='js/landing.js')}}"></script></body></html>
