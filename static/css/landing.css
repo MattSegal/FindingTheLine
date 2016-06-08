@@ -6,7 +6,9 @@
   font-style: normal; }
 
 html {
-  height: 100%; }
+  height: 100%;
+  padding: 0;
+  margin: 0; }
 
 body {
   background-size: cover;
@@ -64,31 +66,8 @@ header {
   header .featuring + .directed {
     margin-left: 1.5em; }
 
-@media (max-height: 890px), (max-width: 1200px) {
-  body {
-    font-size: 8px; } }
-
-@media (max-width: 1000px) {
-  body {
-    font-size: 7px; } }
-
-@media (max-height: 775px), (max-width: 800px) {
-  body {
-    font-size: 6px; } }
-
 @media (max-width: 750px) {
   header {
     position: inherit;
-    margin: 12em auto 0 auto; } }
-
-@media (max-width: 550px) {
-  body {
-    font-size: 6px; } }
-
-@media (max-height: 730px) and (min-width: 1500px), (min-width: 1600px) {
-  body {
-    font-size: 4px; } }
-
-@media (max-height: 665px), (max-width: 475px) {
-  body {
-    font-size: 4px; } }
+    margin: 0 auto;
+    padding-top: 12em; } }

@@ -42,7 +42,6 @@ html(lang="en")
             a(href="{{url_for('contact')}}") 
                 |MORE INFO
                 img(src="{{url_for('static',filename='img/more-info-arrow.gif')}}")
-        .test-box
         script.
             // when bg image loaded, swap out full image
             window.onload = function loadSharpImages() {
@@ -53,10 +52,10 @@ html(lang="en")
                 var backgroundImage = new Image();
                 backgroundImage.src = backgroundSourceFile
                 backgroundImage.onload = function() {
-                    function fadeOut(i) {
-                        preLoadBackground.style.opacity = 1 - 0.01*i
-                        if (i >= 100) return
-                        setTimeout(function(){fadeOut(i+1)},1)
+                    function fadeOut(visibility) {
+                        preLoadBackground.style.opacity = 1 - 0.01*visibility
+                        if (visibility >= 100) return
+                        setTimeout(function(){fadeOut(visibility+1)},1)
                     }
                     fadeOut(0)
                 }
