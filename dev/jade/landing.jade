@@ -2,71 +2,70 @@ doctype html
 html(lang="en")
     head
         meta(charset="utf-8")
-        //- meta(name = "viewport" content = "initial-scale=1") 
         meta(name = "viewport" content = "width=device-width,initial-scale=1") 
+        //- Facebook metadata
         meta(property="og:image" content="http://findingthelinefilm.com/static/img/thumbnail-image.jpg")
         meta(property="og:title" content="Finding The Line Film")
         meta(property="og:description" content="How do you find the line between progression and excessive risk?")
-
-        link(rel="stylesheet", type='text/css', 
-            href="https://fonts.googleapis.com/css?family=Roboto:400,700")
-        link(rel="stylesheet", type='text/css', 
-            href="https://fonts.googleapis.com/css?family=Economica:400,700")
-
-        link(rel="stylesheet", type='text/css', 
-            href="{{url_for('static',filename='css/reset.css')}}")
-        link(rel="stylesheet", type='text/css', 
-            href="{{url_for('static',filename='css/landing.css')}}")
+        link(rel="stylesheet", type='text/css', href="{{url_for('static',filename='css/landing.css')}}")
         title Finding the Line
-        {% include "pre_load_images.html" %}
 
     body
-        .pre-load-image
-        header
-            h1.title FINDING THE LINE
-            .bar
-            h2.featuring FEATURING ANNA + NAT SEGAL
-            h2.directed DIRECTED BY BJARNE SALEN
-        
-        .more-info(id="more-info")
-            a(href="{{url_for('contact')}}") 
-                |MORE INFO
-                img(src="{{url_for('static',filename='img/more-info-arrow.gif')}}")
-        script.
-            // when bg image loaded, swap out full image
-            window.onload = function loadSharpImages() {
-                // Quit early if older browser (e.g. IE 8).
-                if (!('addEventListener' in window)) return
-                var preLoadBackground = document.querySelector(".pre-load-image")
-                var backgroundSourceFile = "{{url_for('static',filename='img/landing-page-background.jpg')}}"
-                var backgroundImage = new Image();
-                backgroundImage.src = backgroundSourceFile
-                backgroundImage.onload = function() {
-                    function fadeOut(visibility) {
-                        preLoadBackground.style.opacity = 1 - 0.01*visibility
-                        if (visibility >= 100) return
-                        setTimeout(function(){fadeOut(visibility+1)},1)
-                    }
-                    fadeOut(0)
-                }
-            };
-
-            function showFonts() {
-              var moreInfoBox = document.getElementsByClassName("more-info")[0]
-              var headerTag = document.getElementsByTagName("header")[0]
-              headerTag.style.opacity = 1
-              moreInfoBox.style.opacity = 1
+        .panel#first-panel
+            div#navbar
+                ul
+                    li#first-btn ONE
+                    li#second-btn TWO
+                    li#third-btn THREE
+                    li#last-btn FOUR
+                    
+            .title
+                h1 FINDING THE LINE
+                .bar
+                h2.featuring FEATURING ANNA + NAT SEGAL
+                h2.directed DIRECTED BY BJARNE SALEN
+        .panel#second-panel
+        .panel#third-panel
+        .panel#last-panel
+            .pre-load-image
+    script(src="{{url_for('static',filename='js/jquery-3.1.0.min.js')}}")
+    script.
+        // Navbar scroll
+        var nav = $('#navbar');
+        var navbarInitialVerticalPosition = nav.offset().top;
+        var isNavbarFixed = false;
+        var $window = $(window);
+        var positionNavbar = function() {
+            var windowTopVerticalPosition = $window.scrollTop();
+            var shouldBeFixed = windowTopVerticalPosition > navbarInitialVerticalPosition;
+            if (shouldBeFixed && !isNavbarFixed) {
+                nav.addClass("floating")
+                isNavbarFixed = true;
             }
-            // Yeahyeahyeahyeah browser detection is bad
-            var isIE9  = navigator.userAgent.indexOf("MSIE 9") != -1        
-            var isIE10 = navigator.userAgent.indexOf("MSIE 10") != -1
-            var isIE11 = navigator.userAgent.indexOf("rv:11.0") != -1
-            var isEdge = navigator.userAgent.indexOf("Edge") != -1
-            if ( isIE9 || isIE10 || isIE11 || isEdge) {
-                setTimeout(showFonts,2000)
-            } else {
-                document.fonts.ready.then(showFonts)
+            else if (!shouldBeFixed && isNavbarFixed)
+            {
+                nav.removeClass("floating")
+                isNavbarFixed = false;
             }
+        }
+        $window.scroll(positionNavbar);
+        window.onload = positionNavbar
 
-        script(src="{{url_for('static',filename='js/landing.js')}}")
-       
+        // Scroll Button
+        var panels = [
+            "first",
+            "second",
+            "third",
+            "last"
+        ]
+        panels.forEach( function(panelName)
+        {
+            var button =  $("#"+panelName+"-btn")
+            var content = $("#"+panelName+"-panel")
+            button.on('click', function() 
+            {
+                $('html, body').animate({
+                    scrollTop: (content.offset().top)
+                },500)
+            })
+        })

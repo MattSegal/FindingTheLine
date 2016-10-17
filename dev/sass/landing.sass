@@ -1,3 +1,5 @@
+@import reset
+
 @font-face
 	font-family: 'White Elephant'
 	src: url('../fonts/white-elephant.eot')
@@ -6,8 +8,15 @@
 	font-style: normal
 
 
-$background-image: url("../img/landing-page-background.jpg")
-$page-font: normal normal 400 1em 'White Elephant','Economica',sans-serif
+
+$page-font: normal normal 400 1em 'White Elephant',sans-serif
+$first-background-image: url("../img/test_gallery/test1.jpg")
+$second-background-image: url("../img/test_gallery/test3.jpg")
+$third-background-image: url("../img/test_gallery/test4.jpg")
+// $last-background-image: url("../img/landing-page-background.jpg")
+$last-background-image: url("../img/test_gallery/test5.jpg")
+
+$title-color: #fff
 
 html
 	height: 100%
@@ -15,69 +24,85 @@ html
 	margin: 0
 
 body
-	background-size: cover
-	background-position: right 60%
-	background-image: $background-image
 	font-size: 10px
 
-// *
+*
 	// outline: red 1px solid
 
-.more-info
-	opacity: 0
-	position: absolute
-	bottom: 30px
-	right: 5%
-	img
-		vertical-align: bottom
-		height: 40px
-	a
-		font: $page-font
-		font-size: 35px
-		text-decoration: none
-		color: #000
-		&:hover
-			text-decoration: underline
+#navbar
+	margin: 0 0 20px 0
+	color: $title-color
+	&.floating
+		position: fixed
+		top: 0
+		width: 100%
+		padding: 20px 0
+		background-color: #333
+	ul
+		margin: 0 auto
+		width: 50%
+		li
+			display: inline-block
+			text-align: center
+			list-style: none
+			font: $page-font
+			font-size: 4em
+			cursor: pointer
+			&:hover
+				text-decoration: underline
+		li+li
+			// just use flexbox
+			margin-left: 30px
 
-#more-info.top-left
-	top: 20px
-	left: 30px
-	a
-		font-size: 25px
-	img
-		display: none
+.panel
+	background-size: cover
+	background-position: center
 
-header
-	opacity: 0
-	width: 80em
-	position: absolute
-	top: 120px
-	top: 12em // 120px at full size
-	right: 80px
+.pre-load-image
+    width: 100%; 
+    height: 100%
+    opacity: 1; 
+    z-index: -1;
+
+#first-panel
+	height: 100vh
+	background-image: $first-background-image
+	padding: 50px 0 0 0
+
+#second-panel
+	height: 100vh
+	background-image: $second-background-image
+
+#third-panel
+	height: 100vh
+	background-image: $third-background-image
+
+#last-panel
+	background-size: cover
+	background-position: center right
+	background-image: $last-background-image
+	height: 100vh
+	.pre-load-image 
+		background-position: center right
+		background-size: cover
+
+.title
+	margin: 0 auto
 	font: $page-font
 	text-align: center
+	color: $title-color
 	h1
-		font-size: 12em
+		font-size: 8em
 		line-height: 1em
 	h2
-		font-size: 4.5em
-
-	.title
-		margin-bottom: 0em
-
+		font-size: 3em
 	.bar
-		width: 80%
+		width: 35em
 		height: 2px
-		margin: 0 auto 4em auto
-		background-color: #333
+		margin: 0 auto 1em auto
+		background-color: $title-color
 
 	.featuring, .directed
 		display: inline-block
 	.featuring+.directed
 		margin-left: 1.5em
-
-@media(max-width: 750px)
-	header
-		position: inherit
-		margin: 0 auto
-		padding-top: 12em

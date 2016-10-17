@@ -1,3 +1,5 @@
+@import reset
+
 @font-face
 	font-family: 'White Elephant'
 	src: url('../fonts/white-elephant.eot')
@@ -7,21 +9,20 @@
 
 
 $background-image: url("../img/contact-page-background.jpg")
-$page-font: normal normal 400 1em 'White Elephant','Economica',sans-serif
+$page-font: normal normal 400 1em 'White Elephant',sans-serif
 $content-font: normal normal 300 1em 'Roboto',sans-serif
+
+*
+	// outline: red 1px solid
 
 html
 	height: 100%
-	// overflow-x: hidden
 
 body
 	background-size: cover
 	background-position: right 60%
 	background-image: $background-image
 	font-size: 10px
-
-*
-	// outline: red 1px solid
 
 .title
 	font: $page-font

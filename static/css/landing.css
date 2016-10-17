@@ -1,3 +1,21 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
 @font-face {
   font-family: 'White Elephant';
   src: url("../fonts/white-elephant.eot");
@@ -11,63 +29,80 @@ html {
   margin: 0; }
 
 body {
-  background-size: cover;
-  background-position: right 60%;
-  background-image: url("../img/landing-page-background.jpg");
   font-size: 10px; }
 
-.more-info {
-  opacity: 0;
-  position: absolute;
-  bottom: 30px;
-  right: 5%; }
-  .more-info img {
-    vertical-align: bottom;
-    height: 40px; }
-  .more-info a {
-    font: normal normal 400 1em "White Elephant", "Economica", sans-serif;
-    font-size: 35px;
-    text-decoration: none;
-    color: #000; }
-    .more-info a:hover {
-      text-decoration: underline; }
-
-#more-info.top-left {
-  top: 20px;
-  left: 30px; }
-  #more-info.top-left a {
-    font-size: 25px; }
-  #more-info.top-left img {
-    display: none; }
-
-header {
-  opacity: 0;
-  width: 80em;
-  position: absolute;
-  top: 120px;
-  top: 12em;
-  right: 80px;
-  font: normal normal 400 1em "White Elephant", "Economica", sans-serif;
-  text-align: center; }
-  header h1 {
-    font-size: 12em;
-    line-height: 1em; }
-  header h2 {
-    font-size: 4.5em; }
-  header .title {
-    margin-bottom: 0em; }
-  header .bar {
-    width: 80%;
-    height: 2px;
-    margin: 0 auto 4em auto;
+#navbar {
+  margin: 0 0 20px 0;
+  color: #fff; }
+  #navbar.floating {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 0;
     background-color: #333; }
-  header .featuring, header .directed {
-    display: inline-block; }
-  header .featuring + .directed {
-    margin-left: 1.5em; }
-
-@media (max-width: 750px) {
-  header {
-    position: inherit;
+  #navbar ul {
     margin: 0 auto;
-    padding-top: 12em; } }
+    width: 50%; }
+    #navbar ul li {
+      display: inline-block;
+      text-align: center;
+      list-style: none;
+      font: normal normal 400 1em "White Elephant", sans-serif;
+      font-size: 4em;
+      cursor: pointer; }
+      #navbar ul li:hover {
+        text-decoration: underline; }
+    #navbar ul li + li {
+      margin-left: 30px; }
+
+.panel {
+  background-size: cover;
+  background-position: center; }
+
+.pre-load-image {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  z-index: -1; }
+
+#first-panel {
+  height: 100vh;
+  background-image: url("../img/test_gallery/test1.jpg");
+  padding: 50px 0 0 0; }
+
+#second-panel {
+  height: 100vh;
+  background-image: url("../img/test_gallery/test3.jpg"); }
+
+#third-panel {
+  height: 100vh;
+  background-image: url("../img/test_gallery/test4.jpg"); }
+
+#last-panel {
+  background-size: cover;
+  background-position: center right;
+  background-image: url("../img/test_gallery/test5.jpg");
+  height: 100vh; }
+  #last-panel .pre-load-image {
+    background-position: center right;
+    background-size: cover; }
+
+.title {
+  margin: 0 auto;
+  font: normal normal 400 1em "White Elephant", sans-serif;
+  text-align: center;
+  color: #fff; }
+  .title h1 {
+    font-size: 8em;
+    line-height: 1em; }
+  .title h2 {
+    font-size: 3em; }
+  .title .bar {
+    width: 35em;
+    height: 2px;
+    margin: 0 auto 1em auto;
+    background-color: #fff; }
+  .title .featuring, .title .directed {
+    display: inline-block; }
+  .title .featuring + .directed {
+    margin-left: 1.5em; }
