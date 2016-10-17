@@ -1,7 +1,4 @@
 # tells git what files to ignore
-*~
-*.swp
 *.pyc
-venv
 node_modules
-database.sqlite
+*.prod
