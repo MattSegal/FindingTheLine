@@ -5,7 +5,7 @@ from helper_functions import *
 from functools import wraps
 
 app = Flask(__name__)
-app.config.from_object('config.Config')
+app.secret_key = 'wu tang clan aint nothin to fuck wit'
 security = Security()
 
 @app.route('/')
