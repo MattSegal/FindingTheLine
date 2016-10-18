@@ -1,0 +1,39 @@
+first panel scroll bw images on a timer
+title on left side - at least when big
+
+merufilm.com
+shades-of-winter.com
+
+EVERY PAGE HAS A HERO IMAGE
+ALL PAGES CONTENT WHITE BACKGROUND
+
+Test On
+Chrome
+ - Safari (try get emulator going)
+Firefox
+IE - Edge
+
+navbar
+	HOME - one page
+		kickstater link
+		3 paragrahs of text
+	ABOUT - one page
+		more about the film
+		synopsis
+	FILMMAKERS - separate
+		pics and bio about crew (like meru)
+	GALLERY - separate
+		~15 photos
+		in a tight grid
+			- lightbox pop up with description when clicked on
+	PARTNERS
+		- sponsors page
+	PRESS - one page
+		shit the press has said
+	FOOTER 
+		- all or black or some shit
+		- sponsors list
+		- facebook link
+		- contact box
+		- newsletter signup box
+		- ftl copyright signature at the bottom

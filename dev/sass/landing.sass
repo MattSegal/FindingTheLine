@@ -41,17 +41,19 @@ body
 	ul
 		margin: 0 auto
 		width: 50%
-		li
-			display: inline-block
+		display: flex
+		justify-content: center
+		li, a
+			color: $title-color
 			text-align: center
+			text-decoration: none
 			list-style: none
 			font: $page-font
-			font-size: 4em
+			font-size: 2em
 			cursor: pointer
 			&:hover
 				text-decoration: underline
-		li+li
-			// just use flexbox
+		li+li, a+a, a+li, li+a
 			margin-left: 30px
 
 .panel
@@ -94,15 +96,8 @@ body
 	h1
 		font-size: 8em
 		line-height: 1em
-	h2
-		font-size: 3em
 	.bar
 		width: 35em
 		height: 2px
 		margin: 0 auto 1em auto
 		background-color: $title-color
-
-	.featuring, .directed
-		display: inline-block
-	.featuring+.directed
-		margin-left: 1.5em

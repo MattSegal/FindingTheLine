@@ -42,17 +42,20 @@ body {
     background-color: #333; }
   #navbar ul {
     margin: 0 auto;
-    width: 50%; }
-    #navbar ul li {
-      display: inline-block;
+    width: 50%;
+    display: flex;
+    justify-content: center; }
+    #navbar ul li, #navbar ul a {
+      color: #fff;
       text-align: center;
+      text-decoration: none;
       list-style: none;
       font: normal normal 400 1em "White Elephant", sans-serif;
-      font-size: 4em;
+      font-size: 2em;
       cursor: pointer; }
-      #navbar ul li:hover {
+      #navbar ul li:hover, #navbar ul a:hover {
         text-decoration: underline; }
-    #navbar ul li + li {
+    #navbar ul li + li, #navbar ul a + a, #navbar ul a + li, #navbar ul li + a {
       margin-left: 30px; }
 
 .panel {
@@ -95,14 +98,8 @@ body {
   .title h1 {
     font-size: 8em;
     line-height: 1em; }
-  .title h2 {
-    font-size: 3em; }
   .title .bar {
     width: 35em;
     height: 2px;
     margin: 0 auto 1em auto;
     background-color: #fff; }
-  .title .featuring, .title .directed {
-    display: inline-block; }
-  .title .featuring + .directed {
-    margin-left: 1.5em; }
