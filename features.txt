@@ -17,6 +17,7 @@ navbar
 	HOME - one page
 		kickstater link
 		3 paragrahs of text
+		- optionally takes you to home page or home anchor depending on if your on the page
 	ABOUT - one page
 		more about the film
 		synopsis

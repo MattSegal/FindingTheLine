@@ -82,43 +82,10 @@ body {
     margin: 0 auto 1em auto;
     background-color: #fff; }
 
-#home {
+#hero-panel {
   height: 100vh;
-  background-image: url("../img/test_gallery/home.jpg");
-  background-position: 70% 50%;
+  background-image: url("../img/test_gallery/crew.jpg");
   padding: 50px 0 0 0; }
 
-#about {
-  height: 100vh;
-  display: block;
-  position: relative; }
-  #about::after {
-    content: "";
-    background-image: url("../img/test_gallery/about.jpg");
-    background-size: cover;
-    opacity: 0.2;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1; }
-
-#press {
-  height: 100vh;
-  display: block;
-  position: relative; }
-  #press::after {
-    content: "";
-    background-image: url("../img/test_gallery/press.jpg");
-    background-size: cover;
-    opacity: 0.2;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1; }
-
 .title .bar {
-  width: 35em; }
+  width: 25em; }

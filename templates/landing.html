@@ -1,39 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta property="og:image" content="http://findingthelinefilm.com/static/img/thumbnail-image.jpg"><meta property="og:title" content="Finding The Line Film"><meta property="og:description" content="How do you find the line between progression and excessive risk?"><link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/landing.css')}}"><title>Finding the Line</title></head><body><div id="first-panel" class="panel"><div id="navbar"><ul><li id="first-btn">HOME</li><li id="second-btn">ABOUT</li><a href="/crew">FILMMAKERS</a><a href="/gallery">GALLERY</a><a href="/partners">PARTNERS</a><li id="last-btn">PRESS</li></ul></div><div class="title"><h1>FINDING THE LINE</h1><div class="bar"></div></div></div><div id="second-panel" class="panel"></div><div id="third-panel" class="panel"></div><div id="last-panel" class="panel"><div class="pre-load-image"></div></div></body><script src="{{url_for('static',filename='js/jquery-3.1.0.min.js')}}"></script><script>// Navbar scroll
-var nav = $('#navbar');
-var navbarInitialVerticalPosition = nav.offset().top;
-var isNavbarFixed = false;
-var $window = $(window);
-var positionNavbar = function() {
-    var windowTopVerticalPosition = $window.scrollTop();
-    var shouldBeFixed = windowTopVerticalPosition > navbarInitialVerticalPosition;
-    if (shouldBeFixed && !isNavbarFixed) {
-        nav.addClass("floating")
-        isNavbarFixed = true;
-    }
-    else if (!shouldBeFixed && isNavbarFixed)
-    {
-        nav.removeClass("floating")
-        isNavbarFixed = false;
-    }
-}
-$window.scroll(positionNavbar);
-window.onload = positionNavbar
-
-// Scroll Button
-var panels = [
-    "first",
-    "second",
-    "third",
-    "last"
-]
-panels.forEach( function(panelName)
-{
-    var button =  $("#"+panelName+"-btn")
-    var content = $("#"+panelName+"-panel")
-    button.on('click', function() 
-    {
-        $('html, body').animate({
-            scrollTop: (content.offset().top)
-        },500)
-    })
-})</script></html>
+{% extends "_layout.html" %}
+{% block head %}<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/landing.css')}}"/>{% endblock %}
+{% block body %}<div id="home" class="panel">{% include "_navbar.html" %}<div class="title"><h1>FINDING THE LINE</h1><div class="bar"></div></div></div><div id="about" class="panel"></div><div id="press" class="panel"></div>{% endblock %}
+{% block scripts %}
+{% include "_navbar_js.html" %}
+{% endblock %}

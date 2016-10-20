@@ -1,0 +1,6 @@
+{% extends "_layout.html" %}
+{% block head %}<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/crew.css')}}"/>{% endblock %}
+{% block body %}<div id="hero-panel" class="panel">{% include "_navbar.html" %}<div class="title"><h1>FILMMAKERS</h1><div class="bar"></div></div></div>{% endblock %}
+{% block scripts %}
+{% include "_navbar_js.html" %}
+{% endblock %}

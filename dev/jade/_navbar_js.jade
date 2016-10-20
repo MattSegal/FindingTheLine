@@ -1,0 +1,56 @@
+script.
+    // Navbar scroll animation
+    var nav = $('#navbar');
+    var navbarInitialVerticalPosition = nav.offset().top;
+    var isNavbarFixed = false;
+    var $window = $(window);
+    var positionNavbar = function() {
+        var windowTopVerticalPosition = $window.scrollTop();
+        var shouldBeFixed = windowTopVerticalPosition > navbarInitialVerticalPosition;
+        if (shouldBeFixed && !isNavbarFixed) {
+            nav.addClass("floating")
+            isNavbarFixed = true;
+        }
+        else if (!shouldBeFixed && isNavbarFixed)
+        {
+            nav.removeClass("floating")
+            isNavbarFixed = false;
+        }
+    }
+    $window.scroll(positionNavbar);
+    window.onload = positionNavbar
+
+    // Scroll Button Actions
+    path = window.location.href.split('/').filter(function(x){return x!==""})
+
+    isHomePage = path.length === 2 // Filthy
+    panelAction = isHomePage ? scrollToPanel : browseToPanel
+
+    var panels = [
+        "home",
+        "about",
+        "press"
+    ]
+
+    panels.forEach(panelAction)
+
+    function scrollToPanel(panelName)
+    {
+        var button =  $("#"+panelName+"-btn")
+        var content = $("#"+panelName)
+        button.on('click', function() 
+        {
+            $('html, body').animate({
+                scrollTop: (content.offset().top)
+            },500)
+        })
+    }
+
+    function browseToPanel(panelName)
+    {
+        var button =  $("#"+panelName+"-btn")
+        button.on('click', function() 
+        {
+            window.location.href = '../#'+panelName
+        })
+    }

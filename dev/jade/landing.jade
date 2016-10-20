@@ -1,71 +1,20 @@
-doctype html
-html(lang="en")
-    head
-        meta(charset="utf-8")
-        meta(name = "viewport" content = "width=device-width,initial-scale=1") 
-        //- Facebook metadata
-        meta(property="og:image" content="http://findingthelinefilm.com/static/img/thumbnail-image.jpg")
-        meta(property="og:title" content="Finding The Line Film")
-        meta(property="og:description" content="How do you find the line between progression and excessive risk?")
-        link(rel="stylesheet", type='text/css', href="{{url_for('static',filename='css/landing.css')}}")
-        title Finding the Line
+{% extends "_layout.html" %}
 
-    body
-        .panel#first-panel
-            div#navbar
-                ul
-                    li#first-btn HOME
-                    li#second-btn ABOUT
-                    a(href="/crew") FILMMAKERS
-                    a(href="/gallery") GALLERY
-                    a(href="/partners") PARTNERS
-                    li#last-btn PRESS
-                    
-            .title
-                h1 FINDING THE LINE
-                .bar
-        .panel#second-panel
-        .panel#third-panel
-        .panel#last-panel
-            .pre-load-image
-    script(src="{{url_for('static',filename='js/jquery-3.1.0.min.js')}}")
-    script.
-        // Navbar scroll
-        var nav = $('#navbar');
-        var navbarInitialVerticalPosition = nav.offset().top;
-        var isNavbarFixed = false;
-        var $window = $(window);
-        var positionNavbar = function() {
-            var windowTopVerticalPosition = $window.scrollTop();
-            var shouldBeFixed = windowTopVerticalPosition > navbarInitialVerticalPosition;
-            if (shouldBeFixed && !isNavbarFixed) {
-                nav.addClass("floating")
-                isNavbarFixed = true;
-            }
-            else if (!shouldBeFixed && isNavbarFixed)
-            {
-                nav.removeClass("floating")
-                isNavbarFixed = false;
-            }
-        }
-        $window.scroll(positionNavbar);
-        window.onload = positionNavbar
+{% block head %}
+link(rel="stylesheet", type='text/css', href="{{url_for('static',filename='css/landing.css')}}")
+{% endblock %}
 
-        // Scroll Button
-        var panels = [
-            "first",
-            "second",
-            "third",
-            "last"
-        ]
-        panels.forEach( function(panelName)
-        {
-            var button =  $("#"+panelName+"-btn")
-            var content = $("#"+panelName+"-panel")
-            button.on('click', function() 
-            {
-                $('html, body').animate({
-                    scrollTop: (content.offset().top)
-                },500)
-            })
-        })
+{% block body %}
+.panel#home
+    {% include "_navbar.html" %}
+            
+    .title
+        h1 FINDING THE LINE
+        .bar
+.panel#about
+.panel#press
+{% endblock %}
+
+{% block scripts %}
+{% include "_navbar_js.html" %}
+{% endblock %}

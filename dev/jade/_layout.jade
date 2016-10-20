@@ -1,0 +1,16 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        meta(name = "viewport" content = "width=device-width,initial-scale=1") 
+        //- Facebook metadata
+        meta(property="og:image" content="http://findingthelinefilm.com/static/img/thumbnail-image.jpg")
+        meta(property="og:title" content="Finding The Line Film")
+        meta(property="og:description" content="How do you find the line between progression and excessive risk?")
+        {% block head %}{% endblock %}
+        title Finding the Line
+
+    body
+        {% block body %}{% endblock %}
+    script(src="{{url_for('static',filename='js/jquery-3.1.0.min.js')}}")
+    {% block scripts %}{% endblock %}

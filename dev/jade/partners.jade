@@ -1,0 +1,19 @@
+{% extends "_layout.html" %}
+
+{% block head %}
+link(rel="stylesheet", type='text/css', href="{{url_for('static',filename='css/partners.css')}}")
+{% endblock %}
+
+{% block body %}
+.panel#hero-panel
+    {% include "_navbar.html" %}
+
+    .title
+        h1 PARTNERS
+        .bar
+{% endblock %}
+
+
+{% block scripts %}
+{% include "_navbar_js.html" %}
+{% endblock %}
