@@ -28,8 +28,8 @@ html {
   padding: 0;
   margin: 0; }
 
-body {
-  font-size: 12px; }
+body, h1, h2 {
+  font-size: 14px; }
 
 .pre-load-image {
   width: 100%;
@@ -88,4 +88,4 @@ body {
   padding: 50px 0 0 0; }
 
 .title .bar {
-  width: 25em; }
+  width: 22em; }
