@@ -1,24 +1,27 @@
 @import _theme
 
-$title-color: #000
-
-#navbar 
-	ul
-		li,a 
-			color: $title-color
-
+// Custom title color for light background
+.navbutton
+    color: $dark-title-color
+.floating
+    .navbutton
+        color: $title-color
+        
 .title
-    color: $title-color
+    color: $dark-title-color
     .bar
-    	background-color: $title-color
+        background-color: $dark-title-color
 
 
-#hero-panel
-    height: 100vh
+#hero
+    height: 60vh
     background-image: $gallery-background
     padding: 50px 0 0 0
-    background-size: cover
-    back
+
+#content
+    height: 100vh
+    background-color: $grey-background-color
+
 
 .title
     .bar

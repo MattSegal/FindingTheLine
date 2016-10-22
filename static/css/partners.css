@@ -57,7 +57,6 @@ body, h1, h2 {
     display: flex;
     justify-content: center; }
     #navbar ul li, #navbar ul a {
-      color: #fff;
       text-align: center;
       text-decoration: none;
       list-style: none;
@@ -68,6 +67,9 @@ body, h1, h2 {
         text-decoration: underline; }
     #navbar ul li + li, #navbar ul a + a, #navbar ul a + li, #navbar ul li + a {
       margin-left: 30px; }
+
+.navbutton {
+  color: #fff; }
 
 .title {
   margin: 0 auto;
@@ -82,10 +84,15 @@ body, h1, h2 {
     margin: 0 auto 1em auto;
     background-color: #fff; }
 
-#hero-panel {
-  height: 100vh;
-  background-image: url("../img/test_gallery/partners.jpg");
-  padding: 50px 0 0 0; }
-
 .title .bar {
   width: 18em; }
+
+#hero {
+  height: 60vh;
+  background-image: url("../img/test_gallery/partners.jpg");
+  background-position: center 80%;
+  padding: 50px 0 0 0; }
+
+#content {
+  height: 100vh;
+  background-color: #eee; }

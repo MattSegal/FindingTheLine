@@ -1,10 +1,21 @@
 @import _theme
 
-#hero-panel
-    height: 100vh
-    background-image: $crew-background
-    padding: 50px 0 0 0
-
+$shadow: 2px 2px #333;
 .title
+    h1
+        text-shadow: $shadow
     .bar
         width: 22em
+
+.navbutton
+    text-shadow: $shadow
+
+#hero
+    height: 60vh
+    background-image: $crew-background
+    background-position: center 80%
+    padding: 50px 0 0 0
+
+#content
+    height: 100vh
+    background-color: $grey-background-color
