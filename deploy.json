@@ -1,0 +1,36 @@
+{
+    "dirs" : {
+        "deployable" : [
+            "static",
+            "css",
+            "js",
+            "img",
+            "fonts",
+            "templates",
+            "test-gallery"
+        ]
+    },
+
+    "files" : {
+        "file_types" : [
+            "py",
+            "js",
+            "html",
+            "ico",
+            "jpg",
+            "jpeg",
+            "png",
+            "gif",
+            "css",
+            "svg",
+            "eot",
+            "otf",
+            "ttf",
+            "woff"
+        ],
+        "deployable" : [],
+        "non-deployable" : [
+            "gulpfile.js"
+        ]
+    }
+}
