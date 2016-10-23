@@ -1,6 +1,6 @@
 class Config(object):
-	DEBUG = True
-	SECRET_KEY = "THIS_IS_FOR_DEV_WORK"
+    DEBUG = True
+    SECRET_KEY = "THIS_IS_FOR_DEV_WORK"
 
     DB_USER = 'root'
     DB_PASSWORD = 'password'
