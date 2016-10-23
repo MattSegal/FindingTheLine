@@ -7,7 +7,7 @@
             "img",
             "fonts",
             "templates",
-            "test-gallery"
+            "test_gallery"
         ]
     },
 
