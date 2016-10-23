@@ -3,7 +3,7 @@ import random
 
 class Security:
     def __init__(self):
-        # What the fuck is security?
+        # Make this harder to crack
         self._password_hash = "1ee7760a3190c95641442f2be0ef7774e139fb1f"
         self._session_hash  = self.get_random_hash()
 

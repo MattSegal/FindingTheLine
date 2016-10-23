@@ -38,3 +38,6 @@ navbar
 		- contact box
 		- newsletter signup box
 		- ftl copyright signature at the bottom
+
+remove insecure password
+STOP USING MYSQL CONNECTOR
