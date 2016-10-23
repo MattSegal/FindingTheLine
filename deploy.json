@@ -28,7 +28,9 @@
             "ttf",
             "woff"
         ],
-        "deployable" : [],
+        "deployable" : [
+            "requirements.txt"
+        ],
         "non-deployable" : [
             "gulpfile.js"
         ]
