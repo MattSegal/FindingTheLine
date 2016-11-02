@@ -8,6 +8,10 @@ html
 
 body, h1, h2
     font-size: 14px
+    @media #{$tablet}
+        font-size: 12px
+    @media #{$phone}
+        font-size: 10px
 
 *
     // outline: red 1px solid
@@ -23,14 +27,14 @@ body, h1, h2
     background-position: center
 
 #navbar
-    margin: 0 0 20px 0
+    margin: 0 0 50px 0
     color: $title-color
     z-index: 1
     &.floating
         position: fixed
         top: 0
         width: 100%
-        padding: 20px 0
+        padding: 10px 0
         background-color: #333
     ul
         margin: 0 auto
@@ -41,8 +45,8 @@ body, h1, h2
             text-align: center
             text-decoration: none
             list-style: none
-            font: $page-font
-            font-size: 2em
+            font: $navbar-font
+            font-size: 1.5em
             cursor: pointer
             &:hover
                 text-decoration: underline
@@ -54,11 +58,11 @@ body, h1, h2
 
 .title
     margin: 0 auto
-    font: $page-font
+    font: $title-font
     text-align: center
     color: $title-color
     h1
-        font-size: 8em
+        font-size: 6em
         line-height: 1em
     .bar
         height: 2px
