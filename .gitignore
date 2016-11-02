@@ -4,5 +4,5 @@ node_modules
 *.prod
 
 # must be added manually
-*.jpg 
-*.png
+# *.jpg 
+# *.png
